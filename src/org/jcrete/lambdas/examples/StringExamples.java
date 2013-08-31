@@ -21,12 +21,23 @@
  */
 package org.jcrete.lambdas.examples;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 public class StringExamples {
     private static final String str = "Hawk1";
 
     public static void main(String[] args) {
-        str.chars().forEach(ch -> System.out.println(ch));
+        str.chars().forEach(ch -> System.out.print(ch));
 //        str.chars().forEach(IterateString::printChar);
+        System.out.println();
+        str.chars().forEach(System.out::print);
+        System.out.println();
+        str.chars().map(ch -> Character.valueOf((char) ch))
+                .forEach(System.out::print);
+//        str.chars().filter(ch -> Character.isDigit(ch))
+//                .forEach(ch -> printChar(ch));
+//        str.chars().filter(Character::isDigit)
+//                .forEach(IterateString::printChar);
     }
 
 }

@@ -22,6 +22,7 @@
 package org.jcrete.lambdas.solutions.exercise2;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
@@ -39,7 +40,8 @@ public class Shop {
     );
 
     public static List<Product> filter(List<Product> products, double minPrice, double maxPrice) {
-        return products.stream().filter(p -> p.getPrice() > minPrice && p.getPrice() < maxPrice).collect(Collectors.toList());
+        return Collections.unmodifiableList(products.stream().filter(p -> p.getPrice() > minPrice && p.getPrice() < maxPrice).collect(Collectors.<Product>toList()));
+        // Collectors.toUnmodifiableList() ?
     }
 
     public static double sum(List<Product> products) {
@@ -47,7 +49,11 @@ public class Shop {
     }
 
     public static double applyTax(List<Product> products, Tax<Product> tax) {
-        return products.stream().mapToDouble(p -> tax.applyTax(p)).sum();
+//        return products.stream().mapToDouble(p -> tax.applyTax(p)).sum();
+        // using method reference
+        return products.stream().mapToDouble(tax::applyTax).sum();
+        // Solution contributed by Andres Almiray
+//        return products.stream().map(tax::applyTax).reduce(0d, Double::sum);
     }
 
     // Why not total(ImmutableList<Product> products, Function<Product, Double> f)  ???

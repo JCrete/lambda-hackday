@@ -48,6 +48,9 @@ public class Database {
         // TODO: find the names of all authors who have written at least two books
         List<String> authors = new ArrayList<>();
         print(authors, "Names of all authors who have written at least 2 books");
+        // TODO: sort by author, then by title
+        List<Book> sorted = new ArrayList<>(BOOK_DB);
+        print(sorted, "Sorted by author, then by title");
     }
 
     private static void print(List<?> l, String msg) {

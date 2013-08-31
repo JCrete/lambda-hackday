@@ -26,9 +26,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Convert methods {@code findFirst, deleteFirst} to λ.
- */
 public class Products {
     private static final List<Product> PRODUCTS = new ArrayList<>(Arrays.asList(
             new Product("Apple", 0.25),
@@ -41,7 +38,7 @@ public class Products {
     private static final Product NONE = new Product("None", 0.0);
     /**
      * Finds a product that starts with the letter.
-     * <p/>
+     * <br/>
      * TODO: Convert it to λ
      *
      * @param products list of products
@@ -61,8 +58,6 @@ public class Products {
 
     /**
      * Deletes the first product that starts with the letter.
-     * <p/>
-     * TODO: Convert it to λ
      *
      * @param products list of products
      * @param letter   a letter

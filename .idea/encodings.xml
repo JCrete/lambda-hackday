@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/lib/hamcrest-all-1.3.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/setupcheck/ConfigureYourLambdaBuildOfJdk.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/Exercise_1_Test.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/Exercise_2_Test.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/Exercise_3_Test.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise1/Color.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise1/Shape.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise1/Shapes.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise2/Ballot.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise2/ElectoralDistrict.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise2/Party.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise2/Person.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise2/RegisteredVoter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise2/VotingRules.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise3/Author.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise3/Book.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise3/Books.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/exercise3/Publisher.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/adoptopenjdk/lambda/tutorial/util/FeatureMatchers.java" charset="UTF-8" />
-  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
 </project>
 

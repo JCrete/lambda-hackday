@@ -24,9 +24,11 @@ package org.jcrete.lambdas.solutions.exercise6;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.StreamSupport;
 
 /**
  * List files in a Directory of a specific type.
@@ -37,11 +39,21 @@ public class ListFiles {
      * List files of specific type in a directory.
      *
      * @param aPath a directory
-     * @param type file type (e.g. ".java")
+     * @param type  file type (e.g. ".java")
      * @return a list of file names of the given type.
      */
-    private static void listFiles(String aPath, String type) throws IOException {
-        Files.newDirectoryStream(Paths.get(aPath), path -> path.toString().endsWith(type)).forEach(System.out::println);
+    private static String[] listFiles(String aPath, String type) throws IOException {
+//        return Files.list(Paths.get(aPath))
+//					.map(Path::toString)
+//					.filter(s -> s.endsWith(type))
+//					.toArray(String[]::new);
+// 		or
+//      Solution by Dmitry Vyazelenko
+        return StreamSupport.stream(
+                Files.newDirectoryStream(Paths.get(aPath), p -> p.toString().endsWith(type)).spliterator(), false)
+                .map(Path::toString)
+                .toArray(String[]::new);
+
     }
 
     /**
@@ -56,7 +68,8 @@ public class ListFiles {
     }
 
     /**
-     * List sub-directories of directory {@code aPath}.
+     * List sub-directories of directory {@code aPath}. Hint: use Files.newDirectoryStream(). Change
+     * signature to {@code private static void listDirectories(String aPath)}
      *
      * @param aPath a directory
      */

@@ -35,7 +35,7 @@ public class ListFiles {
     /**
      * List files of specific type in a directory.
      *
-     * TODO: Convert it to λ. Hint: use Files.newDirectoryStream().
+     * TODO: Convert it to λ.
      *
      * @param path a directory
      * @param type file type (e.g. ".java")

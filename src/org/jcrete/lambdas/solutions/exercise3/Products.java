@@ -24,9 +24,6 @@ package org.jcrete.lambdas.solutions.exercise3;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Convert methods {@code findFirst, deleteFirst} to λ.
- */
 public class Products {
     private static final List<Product> PRODUCTS = new ArrayList<>(Arrays.asList(
             new Product("Apple", 0.25),
@@ -39,7 +36,8 @@ public class Products {
 
     /**
      * Finds a product that starts with the letter.
-     *
+     * <br/>
+	 * TODO: Convert it to λ.
      * @param products list of products
      * @param letter   a letter
      * @return the first product found that starts with the letter

@@ -26,10 +26,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Convert the anonymous event handler to a λ expression
+ * Convert the anonymous methods to λ-expressions
  */
 public class EventHandlerExample {
     public static void main(String[] args) {
+        // TODO: Convert it to λ-expression
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                createGUI();
+            }
+        });
+    }
+	
+	private static void createGUI() {
         final JFrame frame = new JFrame();
         JButton button = new JButton("Click me!");
         // TODO: Convert it to λ-expression

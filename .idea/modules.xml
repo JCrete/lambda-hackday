@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lambdas.iml" filepath="$PROJECT_DIR$/lambdas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambda-hackday.iml" filepath="$PROJECT_DIR$/lambda-hackday.iml" />
     </modules>
   </component>
 </project>

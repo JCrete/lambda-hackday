@@ -21,6 +21,7 @@
  */
 package org.jcrete.lambdas.solutions.exercise7;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -43,7 +44,11 @@ public class Book {
     }
 
     public List<String> getAuthors() {
-        return authors;
+        return Collections.unmodifiableList(authors);
+    }
+
+    public String getFirstAuthor() {
+        return authors.get(0);
     }
 
     @Override

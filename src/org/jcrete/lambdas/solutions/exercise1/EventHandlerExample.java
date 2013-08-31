@@ -25,15 +25,20 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 
 /**
- * Convert the anonymous event handler to a λ expression
+ * Convert the anonymous methods to λ-expressions
  */
 public class EventHandlerExample {
     public static void main(String[] args) {
+        // TODO: Convert it to λ-expression
+        SwingUtilities.invokeLater(() -> createGUI());
+    }
+
+	private static void createGUI() {
         final JFrame frame = new JFrame();
         JButton button = new JButton("Click me!");
-//        ActionListener listener = e -> JOptionPane.showMessageDialog(frame, "Button clicked!");
+        // TODO: Convert it to λ-expression
+        // ActionListener listener = e -> JOptionPane.showMessageDialog(frame, "Button clicked!");
         button.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Button clicked!"));
-
         frame.getContentPane().add(button);
         frame.setSize(100, 80);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
