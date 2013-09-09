@@ -21,7 +21,10 @@
  */
 package org.jcrete.lambdas.solutions.exercise7;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -41,14 +44,14 @@ public class Database {
     public static void main(String[] args) {
         // TODO: find all the books which have the word "Java" in the title
         List<Book> books = BOOK_DB.stream()
-								  .filter(book -> book.getTitle().contains("Java"))
-								  .collect(Collectors.toList());
+                .filter(book -> book.getTitle().contains("Java"))
+                .collect(Collectors.toList());
         print(books, "Books which have the word \"Program\" in the title: ");
         // TODO: Find the titles of books whose author's name is "Bloch"
         List<String> titles = BOOK_DB.stream()
-									 .filter(book -> book.getAuthors().stream().anyMatch(s -> s.contains("Bloch")))
-									 .map(Book::getTitle)
-									 .collect(Collectors.toList());
+                .filter(book -> book.getAuthors().stream().anyMatch(s -> s.contains("Bloch")))
+                .map(Book::getTitle)
+                .collect(Collectors.toList());
 //        List<String> titles = BOOK_DB.stream().flatMap(book -> book.getAuthors().stream().filter(author -> author.equals("Bloch, Joshua"))).map(b -> b.getTitle()).collect(Collectors.toList());
         print(titles, "Titles of books whose author's name is Bloch: ");
         // TODO: find the names of all authors who have written at least two books
@@ -58,7 +61,7 @@ public class Database {
                                       .entrySet().stream()
                                       .filter(e -> e.getValue().size() > 1)
                                       .map(e -> e.getKey())
-                                      .collect(Collectors.<String>toList());
+                                      .collect(Collectors.toList());
         // Solution contributed by Marc Hoffmann; no need for getFirstAuthor() method
 //        List<String> authors = BOOK_DB.stream()
 //                                      .flatMap(book -> book.getAuthors().stream())
@@ -67,17 +70,26 @@ public class Database {
 //                                      .filter(e -> e.getValue().size() > 1)
 //                                      .map(e -> e.getKey())
 //                                      .collect(Collectors.<String>toList());
+        // Another Solution contributed by Maurice Naftalin
+//        System.out.println("Names of all authors who have written at least 2 books: ");
+//        BOOK_DB.stream()
+//                .flatMap(book -> book.getAuthors().stream())
+//                .collect(Collectors.toMap(i -> i, a -> 1, (b, c) -> b + c))
+//                .entrySet().stream()
+//                .filter(e -> e.getValue() > 1)
+//                .map(e -> e.getKey())
+//                .forEach(System.out::println);
         print(authors, "Names of all authors who have written at least 2 books: ");
         // TODO: sort by author, then by title
         List<Book> bookDBCopy = new ArrayList<>(BOOK_DB);
         // one way
         Function<Book, String> fByAuthor = book -> book.getAuthors().get(0);
-        Comparator<Book> byAuthor =  Comparator.comparing(fByAuthor);
+        Comparator<Book> byAuthor = Comparator.comparing(fByAuthor);
 //        Comparator<Book> byAuthor =  Comparator.comparing((Book book) -> book.getAuthors().get(0));
         // another way
 //        Function<Book, String> fByTitle = book -> book.getTitle();
 //        Comparator<Book> byTitle =  Comparator.comparing(fByTitle);
-        Comparator<Book> byTitle =  Comparator.comparing((Book book) -> book.getTitle());
+        Comparator<Book> byTitle = Comparator.comparing(Book::getTitle);
         bookDBCopy.sort(byAuthor.thenComparing(byTitle));
         print(bookDBCopy, "Sorted by author, then by title");
 
